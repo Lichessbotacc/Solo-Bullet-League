@@ -1,8 +1,9 @@
 import json
 
 # Aktuelle Rangliste als Dict: username -> {'points': int, 'booster': float or None}
+current_ranking = {
 "DarkOnCrack": {"points": 0, "booster": None},
-
+}
 
 new_table_json = """
 {"rank":1,"score":82,"rating":2518,"username":"DarkOnCrack","flair":"nature.glowing-star","patronColor":5,"performance":2396}
