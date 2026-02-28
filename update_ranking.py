@@ -30,31 +30,25 @@ current_ranking = {
 }
 
 new_table_json = """
-{"rank":1,"score":82,"rating":2518,"username":"DarkOnCrack","flair":"nature.glowing-star","patronColor":5,"performance":2396}
-{"rank":2,"score":73,"rating":2376,"username":"Konariq7","flair":"nature.glowing-star","patronColor":6,"performance":2353}
-{"rank":3,"score":70,"rating":2451,"username":"DRUHA12","flair":"people.folded-hands-medium-skin-tone","patronColor":1,"performance":2404}
-{"rank":4,"score":65,"rating":2407,"username":"Last_Suspect","performance":2336}
-{"rank":5,"score":48,"rating":2610,"username":"Satranc599","flair":"activity.1st-place-medal","patronColor":1,"performance":2511}
-{"rank":6,"score":41,"rating":2830,"username":"Kurse-Aura1","flair":"people.fingerprint","performance":2719}
-{"rank":7,"score":39,"rating":2058,"username":"This-Is-Agamveer","flair":"symbols.white-exclamation-mark","performance":2223}
-{"rank":8,"score":39,"rating":1965,"username":"Justinsenpai","performance":2003}
-{"rank":9,"score":32,"rating":2410,"username":"Janislav2000","performance":2326}
-{"rank":10,"score":27,"rating":1824,"username":"POPOIPOIPOI","flair":"nature.badger","performance":1945}
-{"rank":11,"score":26,"rating":2210,"username":"Abd_el_wahab","flair":"smileys.face-with-tears-of-joy","performance":2090}
-{"rank":12,"score":25,"rating":2295,"username":"BlotterFan","flair":"symbols.fleur-de-lis","performance":2299}
-{"rank":13,"score":23,"rating":2168,"username":"koreshok73","performance":2051}
-{"rank":14,"score":18,"rating":2520,"username":"c4energy","performance":2417}
-{"rank":15,"score":18,"rating":2195,"username":"kubak5","performance":2167}
-{"rank":16,"score":12,"rating":2547,"username":"TacticalCrush_404","performance":2357}
-{"rank":17,"score":6,"rating":2663,"username":"bulletmaniac","performance":2420}
-{"rank":18,"score":6,"rating":2086,"username":"Devraj-123","performance":2115}
-{"rank":19,"score":6,"rating":1703,"username":"Arjun-Saha6","flair":"smileys.alien","performance":1703}
-{"rank":20,"score":4,"rating":2253,"username":"Skysparks","flair":"objects.kimono","performance":2144}
-{"rank":21,"score":3,"rating":1846,"username":"EgorGromovYT","flair":"activity.trophy","performance":2144}
-{"rank":22,"score":3,"rating":2227,"username":"Zerkycharlie","flair":"activity.lichess-berserk","performance":2126}
-{"rank":23,"score":3,"rating":1357,"username":"Ozgur3838","performance":1679}
-{"rank":24,"score":2,"rating":2353,"username":"borak-kopitiam","performance":2004}
-{"rank":25,"score":1,"rating":2038,"username":"BlackPanda2024","flair":"nature.panda","performance":2038}
+{"rank":1,"score":113,"rating":2538,"username":"DarkOnCrack","flair":"nature.glowing-star","patronColor":5,"performance":2569}
+{"rank":2,"score":81,"rating":2679,"username":"VariantsMain","flair":"people.backhand-index-pointing-down-light-skin-tone","performance":2565}
+{"rank":3,"score":47,"rating":2477,"username":"PushAttack14","flair":"food-drink.cherries","performance":2453}
+{"rank":4,"score":36,"rating":2811,"username":"Kurse-Aura1","flair":"people.fingerprint","performance":2715}
+{"rank":5,"score":29,"rating":2215,"username":"Cold_Sewy12","performance":2261}
+{"rank":6,"score":25,"rating":2410,"username":"VTacademy","flair":"smileys.angry-face-with-horns","performance":2267}
+{"rank":7,"score":19,"rating":2318,"username":"tharindujayasuriya","performance":2384}
+{"rank":8,"score":18,"rating":2204,"username":"BlitzWarlord","flair":"activity.lichess-blitz","performance":2216}
+{"rank":9,"score":15,"rating":2252,"username":"TheRuleBreaker122","flair":"smileys.alien-monster","performance":2294}
+{"rank":10,"score":13,"rating":2185,"username":"Supperhero_2012","flair":"activity.lichess-berserk","performance":2299}
+{"rank":11,"score":10,"rating":2240,"username":"BlotterFan","flair":"symbols.fleur-de-lis","performance":2257}
+{"rank":12,"score":5,"rating":2411,"username":"dunk-master","performance":2319}
+{"rank":13,"score":3,"rating":1869,"username":"EgorGromovYT","flair":"activity.trophy","performance":2062}
+{"rank":14,"score":2,"rating":2175,"username":"kubak5","performance":2541}
+{"rank":15,"score":2,"rating":2397,"username":"blueblue8887","performance":2339}
+{"rank":16,"score":2,"rating":1617,"username":"ciyaerdal4735","flair":"smileys.cold-face","performance":2193}
+{"rank":17,"score":2,"rating":1999,"username":"This-Is-Agamveer","flair":"symbols.white-exclamation-mark","performance":2162}
+{"rank":18,"score":2,"rating":2526,"username":"Checkmate_Drifters","flair":"objects.muted-speaker","performance":2062}
+{"rank":19,"score":1,"rating":1711,"username":"jash_the_goat","flair":"nature.four-leaf-clover","performance":1716}
 """
 
 # =========================
