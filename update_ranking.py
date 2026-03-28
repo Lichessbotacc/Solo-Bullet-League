@@ -63,23 +63,21 @@ current_ranking = {
 }
 
 new_table_json = """
-{"rank":1,"score":86,"rating":2482,"username":"DarkOnCrack","flair":"nature.glowing-star","patronColor":5,"performance":2363}
-{"rank":2,"score":41,"rating":2170,"username":"Abd_el_wahab","flair":"smileys.face-with-tears-of-joy","performance":2387}
-{"rank":3,"score":26,"rating":2201,"username":"BlotterFan","flair":"symbols.fleur-de-lis","performance":2234}
-{"rank":4,"score":21,"rating":2435,"username":"Konariq7","flair":"nature.glowing-star","patronColor":6,"performance":2421}
-{"rank":5,"score":16,"rating":2103,"username":"tunu2011","flair":"smileys.astonished-face-blob","performance":2301}
-{"rank":6,"score":14,"rating":2189,"username":"Cold_Sewy12","performance":2318}
-{"rank":7,"score":12,"rating":2014,"username":"Chonma","flair":"smileys.ogre","performance":2027}
-{"rank":8,"score":6,"rating":1752,"username":"KillingHeartattack","flair":"activity.1st-place-medal","performance":1917}
-{"rank":9,"score":4,"rating":2314,"username":"ComeToBaba1","flair":"objects.crown","performance":2004}
-{"rank":10,"score":3,"rating":2324,"username":"ZugzwangMode","performance":2134}
-{"rank":11,"score":3,"rating":2082,"username":"BlackPanda2024","flair":"nature.panda","performance":1904}
-{"rank":12,"score":3,"rating":1952,"username":"Che947","flair":"activity.lichess-berserk","performance":1775}
-{"rank":13,"score":2,"rating":2292,"username":"Bullet_Thomas","flair":"smileys.face-blowing-a-kiss","performance":2527}
-{"rank":14,"score":2,"rating":2214,"username":"Skysparks","flair":"objects.kimono","performance":2098}
-{"rank":15,"score":2,"rating":2221,"username":"kubak5","performance":2004}
-{"rank":16,"score":2,"rating":1819,"username":"capt_ateradz","performance":1959}
-{"rank":17,"score":2,"rating":2046,"username":"Justinsenpai","performance":1824}
+{"rank":1,"score":236,"rating":2513,"username":"DarkOnCrack","flair":"nature.glowing-star","patronColor":5,"performance":2501}
+{"rank":2,"score":73,"rating":2236,"username":"AhsapAhsap","flair":"activity.lichess-bullet","performance":2220}
+{"rank":3,"score":43,"rating":2181,"username":"tomkruz88","performance":2151}
+{"rank":4,"score":38,"rating":1975,"username":"Helokid","flair":"smileys.melting-face","performance":1938}
+{"rank":5,"score":32,"rating":2028,"username":"Justinsenpai","performance":1977}
+{"rank":6,"score":29,"rating":2228,"username":"just_chess12","performance":2303}
+{"rank":7,"score":26,"rating":2104,"username":"BlackPanda2024","flair":"nature.panda","performance":2173}
+{"rank":8,"score":16,"rating":1706,"username":"KillingHeartattack","flair":"activity.1st-place-medal","performance":1703}
+{"rank":9,"score":13,"rating":2129,"username":"BlitzWarlord","flair":"activity.lichess-blitz","performance":2130}
+{"rank":10,"score":8,"rating":2160,"username":"BlotterFan","flair":"symbols.fleur-de-lis","performance":2088}
+{"rank":11,"score":8,"rating":1425,"username":"SilentExecution","flair":"objects.crossed-swords","performance":1724}
+{"rank":12,"score":6,"rating":2076,"username":"Aura_Farming77","flair":"smileys.cold-face","performance":2113}
+{"rank":13,"score":4,"rating":2164,"username":"PhilipX_2023","flair":"smileys.smiling-face-with-horns","performance":2009}
+{"rank":14,"score":3,"rating":1856,"username":"sribna","flair":"activity.club-suit","performance":1819}
+{"rank":15,"score":2,"rating":2093,"username":"tunu2011","flair":"smileys.astonished-face-blob","performance":2251}
 """
 
 # =========================
