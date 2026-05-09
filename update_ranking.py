@@ -103,22 +103,28 @@ current_ranking = {
 }
 
 new_table_json = """
-{"rank":1,"score":114,"rating":2422,"username":"phone-zerk","flair":"smileys.anxious-face-with-sweat","performance":2429}
-{"rank":2,"score":65,"rating":2359,"username":"DarkOnCrack","flair":"nature.glowing-star","patronColor":6,"performance":2346}
-{"rank":3,"score":54,"rating":2206,"username":"tomkruz88","performance":2223}
-{"rank":4,"score":50,"rating":2171,"username":"ElBasmgy","performance":2078}
-{"rank":5,"score":38,"rating":2372,"username":"Retasea_400","performance":2352}
-{"rank":6,"score":18,"rating":2002,"username":"GeekingKing","performance":1966}
-{"rank":7,"score":16,"rating":2288,"username":"Best_Chess_Player15","flair":"food-drink.mango","performance":2185}
-{"rank":8,"score":6,"rating":2270,"username":"ComeToBaba1","flair":"objects.crown","performance":2201}
-{"rank":9,"score":6,"rating":1622,"username":"Alcedo","flair":"symbols.small-blue-diamond","patronColor":1,"performance":1780}
-{"rank":10,"score":3,"rating":2048,"username":"DIMAStup","flair":"food-drink.doughnut","performance":1946}
-{"rank":11,"score":3,"rating":2085,"username":"Tipchess","flair":"food-drink.green-apple","patronColor":3,"performance":1909}
-{"rank":12,"score":2,"rating":1979,"username":"EEAguitarn1","flair":"smileys.disguised-face","performance":2456}
-{"rank":13,"score":2,"rating":1610,"username":"FatDummy","performance":2108}
-{"rank":14,"score":2,"rating":2216,"username":"Retroceso","flair":"people.crossed-fingers","performance":1958}
-{"rank":15,"score":2,"rating":1099,"username":"fin34601473braunpaul","flair":"activity.lichess-horsey","patronColor":10,"performance":1748}
-{"rank":16,"score":2,"rating":1900,"username":"RookNRollMaster","flair":"symbols.transgender-flag","performance":1582}
+{"rank":1,"score":198,"rating":2650,"username":"Chess_Training_2021","flair":"objects.crown","performance":2480}
+{"rank":2,"score":149,"rating":2446,"username":"DarkOnCrack","flair":"nature.glowing-star","patronColor":6,"performance":2435}
+{"rank":3,"score":148,"rating":2504,"username":"Esen-Zerk","performance":2245}
+{"rank":4,"score":84,"rating":2051,"username":"Helokid","flair":"smileys.melting-face","performance":1994}
+{"rank":5,"score":72,"rating":2138,"username":"Ahmad_AFG","flair":"people.flexed-biceps","performance":2110}
+{"rank":6,"score":58,"rating":1617,"username":"Alcedo","flair":"symbols.small-blue-diamond","patronColor":1,"performance":1682}
+{"rank":7,"score":55,"rating":2183,"username":"Abd_el_wahab","flair":"smileys.face-with-tears-of-joy","performance":2143}
+{"rank":8,"score":55,"rating":1889,"username":"Goku_black419","flair":"smileys.smiling-face-with-horns","performance":1826}
+{"rank":9,"score":53,"rating":1270,"username":"fin34601473braunpaul","flair":"activity.lichess-horsey","patronColor":10,"performance":1695}
+{"rank":10,"score":48,"rating":1769,"username":"Conrad_Gagnon","performance":1627}
+{"rank":11,"score":45,"rating":2395,"username":"VVIPVIBES","performance":2012}
+{"rank":12,"score":37,"rating":2357,"username":"LucienTupin","flair":"food-drink.poultry-leg","performance":2027}
+{"rank":13,"score":25,"rating":1929,"username":"EEAguitarn1","flair":"smileys.disguised-face","performance":1823}
+{"rank":14,"score":21,"rating":1871,"username":"Ficheal","flair":"nature.fire","performance":2147}
+{"rank":15,"score":14,"rating":1350,"username":"Ozgur3838","performance":1445}
+{"rank":16,"score":10,"rating":1586,"username":"BRUNO90_7p","flair":"nature.bear","patronColor":2,"performance":2064}
+{"rank":17,"score":9,"rating":2156,"username":"vasudev9","flair":"smileys.face-in-clouds","performance":1513}
+{"rank":18,"score":8,"rating":2215,"username":"just_chess12","performance":1999}
+{"rank":19,"score":4,"rating":1849,"username":"UrasAras4444","flair":"activity.lichess-ultrabullet","performance":1706}
+{"rank":20,"score":3,"rating":1825,"username":"Arjun-Saha6","flair":"smileys.angry-face-with-horns","performance":1558}
+{"rank":21,"score":2,"rating":1598,"username":"Caleb_IL","flair":"smileys.beaming-face-with-smiling-eyes","performance":1438}
+{"rank":22,"score":2,"rating":2277,"username":"Konariq7","flair":"nature.glowing-star","patronColor":6,"performance":1312}
 """
 
 # =========================
