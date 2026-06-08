@@ -150,25 +150,26 @@ current_ranking = {
 }
 
 new_table_json = """
-{"rank":1,"score":73,"rating":2309,"username":"minipekka1","performance":2170}
-{"rank":2,"score":63,"rating":2268,"username":"rj08","performance":2156}
-{"rank":3,"score":48,"rating":2168,"username":"test_acc123","flair":"smileys.sleeping-face-blob","performance":2315}
-{"rank":4,"score":28,"rating":2590,"username":"BharatBhushanVerma","flair":"symbols.broken-heart","performance":2489}
-{"rank":5,"score":28,"rating":1838,"username":"Conrad_Gagnon","performance":1840}
-{"rank":6,"score":27,"rating":2092,"username":"HRVCHESSSTREAM","performance":2039}
-{"rank":7,"score":11,"rating":1808,"username":"healLan","patronColor":7,"performance":1977}
-{"rank":8,"score":9,"rating":2364,"username":"phone-zerk","flair":"smileys.anxious-face-with-sweat","performance":2129}
-{"rank":9,"score":8,"rating":1931,"username":"RumijaBarCG21","flair":"people.flexed-biceps","performance":1954}
-{"rank":10,"score":6,"rating":1708,"username":"CHesslayer2301","flair":"nature.fire","performance":1970}
-{"rank":11,"score":6,"rating":1801,"username":"Elwan03","performance":1730}
-{"rank":12,"score":5,"rating":1809,"username":"doruk2606","flair":"activity.lichess-bullet","performance":1817}
-{"rank":13,"score":3,"rating":1831,"username":"Carlotaurus","flair":"symbols.fleur-de-lis","performance":2145}
-{"rank":14,"score":3,"rating":2067,"username":"AJESHHRAO12","performance":2061}
-{"rank":15,"score":2,"rating":1713,"username":"SENTHILGANESAN","flair":"smileys.skull-and-crossbones","performance":2317}
-{"rank":16,"score":2,"rating":2558,"username":"DarkOnCrack","flair":"nature.glowing-star","patronColor":6,"performance":2209}
-{"rank":17,"score":2,"rating":2000,"username":"EEAguitarn1","flair":"activity.lichess-rapid","performance":2030}
-{"rank":18,"score":2,"rating":2134,"username":"sirmull","performance":1820}
-{"rank":19,"score":2,"rating":1679,"username":"KillingHeartattack","flair":"activity.1st-place-medal","performance":1607}
+{"rank":1,"score":124,"rating":2576,"username":"UnHolYDuO","performance":2569}
+{"rank":2,"score":119,"rating":2457,"username":"SchachBasti","flair":"activity.lichess-berserk","performance":2507}
+{"rank":3,"score":93,"rating":2515,"username":"BharatBhushanVerma","flair":"symbols.broken-heart","performance":2307}
+{"rank":4,"score":58,"rating":2194,"username":"rj08","performance":2080}
+{"rank":5,"score":52,"rating":2627,"username":"Chess_Training_2021","flair":"objects.crown","performance":2517}
+{"rank":6,"score":44,"rating":2034,"username":"Ezrg94","performance":2034}
+{"rank":7,"score":43,"rating":2500,"username":"gojosaturo1234567","performance":2224}
+{"rank":8,"score":28,"rating":1819,"username":"Conrad_Gagnon","performance":1871}
+{"rank":9,"score":26,"rating":1931,"username":"rohanvv07082010","performance":1919}
+{"rank":10,"score":20,"rating":2339,"username":"Skysparks","flair":"objects.kimono","performance":2337}
+{"rank":11,"score":16,"rating":2184,"username":"tomkruz88","performance":2266}
+{"rank":12,"score":11,"rating":2142,"username":"Ajuju","flair":"nature.tiger","performance":2051}
+{"rank":13,"score":8,"rating":2402,"username":"Egorchess01","flair":"smileys.cold-face","performance":2379}
+{"rank":14,"score":5,"rating":2688,"username":"Bagii_Bagii","performance":2454}
+{"rank":15,"score":4,"rating":2240,"username":"LucienTupin","flair":"food-drink.poultry-leg","performance":2086}
+{"rank":16,"score":4,"rating":1715,"username":"Alcedo","flair":"symbols.small-blue-diamond","patronColor":1,"performance":1788}
+{"rank":17,"score":4,"rating":989,"username":"AVYUKT_GARG","flair":"activity.lichess-variant-king-of-the-hill","performance":1689}
+{"rank":18,"score":3,"rating":2057,"username":"Gyusudhdh_zerk","flair":"activity.lichess-berserk","performance":2504}
+{"rank":19,"score":3,"rating":2064,"username":"Grabytx12","flair":"smileys.ghost","performance":1511}
+{"rank":20,"score":2,"rating":2107,"username":"Jerronbabylansu","performance":2327}
 """
 
 # =========================
