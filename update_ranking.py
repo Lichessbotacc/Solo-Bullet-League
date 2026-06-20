@@ -161,26 +161,26 @@ current_ranking = {
 }
 
 new_table_json = """
-{"rank":1,"score":124,"rating":2576,"username":"UnHolYDuO","performance":2569}
-{"rank":2,"score":119,"rating":2457,"username":"SchachBasti","flair":"activity.lichess-berserk","performance":2507}
-{"rank":3,"score":93,"rating":2515,"username":"BharatBhushanVerma","flair":"symbols.broken-heart","performance":2307}
-{"rank":4,"score":58,"rating":2194,"username":"rj08","performance":2080}
-{"rank":5,"score":52,"rating":2627,"username":"Chess_Training_2021","flair":"objects.crown","performance":2517}
-{"rank":6,"score":44,"rating":2034,"username":"Ezrg94","performance":2034}
-{"rank":7,"score":43,"rating":2500,"username":"gojosaturo1234567","performance":2224}
-{"rank":8,"score":28,"rating":1819,"username":"Conrad_Gagnon","performance":1871}
-{"rank":9,"score":26,"rating":1931,"username":"rohanvv07082010","performance":1919}
-{"rank":10,"score":20,"rating":2339,"username":"Skysparks","flair":"objects.kimono","performance":2337}
-{"rank":11,"score":16,"rating":2184,"username":"tomkruz88","performance":2266}
-{"rank":12,"score":11,"rating":2142,"username":"Ajuju","flair":"nature.tiger","performance":2051}
-{"rank":13,"score":8,"rating":2402,"username":"Egorchess01","flair":"smileys.cold-face","performance":2379}
-{"rank":14,"score":5,"rating":2688,"username":"Bagii_Bagii","performance":2454}
-{"rank":15,"score":4,"rating":2240,"username":"LucienTupin","flair":"food-drink.poultry-leg","performance":2086}
-{"rank":16,"score":4,"rating":1715,"username":"Alcedo","flair":"symbols.small-blue-diamond","patronColor":1,"performance":1788}
-{"rank":17,"score":4,"rating":989,"username":"AVYUKT_GARG","flair":"activity.lichess-variant-king-of-the-hill","performance":1689}
-{"rank":18,"score":3,"rating":2057,"username":"Gyusudhdh_zerk","flair":"activity.lichess-berserk","performance":2504}
-{"rank":19,"score":3,"rating":2064,"username":"Grabytx12","flair":"smileys.ghost","performance":1511}
-{"rank":20,"score":2,"rating":2107,"username":"Jerronbabylansu","performance":2327}
+{"rank":1,"score":102,"rating":2512,"username":"UnHolYDuO","performance":2367}
+{"rank":2,"score":96,"rating":2334,"username":"VVIPVIBES","performance":2402}
+{"rank":3,"score":78,"rating":2406,"username":"hmmmhmmmhmmm","performance":2301}
+{"rank":4,"score":45,"rating":2054,"username":"Jerronbabylansu","performance":2063}
+{"rank":5,"score":41,"rating":2140,"username":"abhigyan_a_b","flair":"symbols.mending-heart","performance":2100}
+{"rank":6,"score":34,"rating":1993,"username":"RumijaBarCG21","flair":"people.flexed-biceps","performance":2011}
+{"rank":7,"score":33,"rating":2379,"username":"minipekka1","performance":2361}
+{"rank":8,"score":24,"rating":1734,"username":"Alcedo","flair":"symbols.small-blue-diamond","patronColor":1,"performance":1851}
+{"rank":9,"score":16,"rating":1780,"username":"Conrad_Gagnon","performance":1878}
+{"rank":10,"score":14,"rating":2214,"username":"rj08","performance":2281}
+{"rank":11,"score":13,"rating":2080,"username":"ElBasmgy","performance":2027}
+{"rank":12,"score":12,"rating":2199,"username":"tomkruz88","performance":2012}
+{"rank":13,"score":8,"rating":2502,"username":"SandaruDamsara","flair":"smileys.skull","performance":2229}
+{"rank":14,"score":8,"rating":2017,"username":"Arjun-Saha6","flair":"smileys.angry-face-with-horns","performance":2065}
+{"rank":15,"score":4,"rating":2234,"username":"Chairopian","flair":"people.zombie","performance":2526}
+{"rank":16,"score":4,"rating":1427,"username":"schwarzerrabe","performance":1603}
+{"rank":17,"score":3,"rating":2795,"username":"ThinkingKnight9","performance":2206}
+{"rank":18,"score":2,"rating":2133,"username":"KING_OF_KILLER","flair":"smileys.angry-face-with-horns","performance":2172}
+{"rank":19,"score":2,"rating":2137,"username":"HugeSmoggyFirebird","flair":"smileys.smiling-face-with-horns-blob","performance":2110}
+{"rank":20,"score":2,"rating":1641,"username":"Thabang-Nate","performance":1615}
 """
 
 # =========================
