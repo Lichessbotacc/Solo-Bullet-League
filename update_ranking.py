@@ -3,31 +3,34 @@ import json
 # Aktuelle Rangliste als Dict: username -> {'points': int, 'booster': float or None}
 current_ranking = {
     "DarkOnCrack": {"points": 2419, "booster": None},
-    "Chess_Training_2021": {"points": 508, "booster": 1.6},
+    "Chess_Training_2021": {"points": 508, "booster": None},
     "Alex-31": {"points": 424, "booster": None},
     "VariantsMain": {"points": 334, "booster": None},
+    "UnHolYDuO": {"points": 328, "booster": 2.0},
     "Helokid": {"points": 322, "booster": None},
     "Justinsenpai": {"points": 318, "booster": None},
-    "tomkruz88": {"points": 270, "booster": None},
+    "tomkruz88": {"points": 282, "booster": None},
     "Abd_el_wahab": {"points": 231, "booster": None},
-    "rj08": {"points": 202, "booster": 1.7},
-    "Conrad_Gagnon": {"points": 198, "booster": 1.3},
-    "BharatBhushanVerma": {"points": 186, "booster": 1.8},
-    "minipekka1": {"points": 158, "booster": None},
+    "rj08": {"points": 225, "booster": 1.1},
+    "Conrad_Gagnon": {"points": 218, "booster": 1.2},
+    "minipekka1": {"points": 191, "booster": 1.4},
+    "BharatBhushanVerma": {"points": 186, "booster": None},
     "Esen-Zerk": {"points": 148, "booster": None},
+    "Alcedo": {"points": 145, "booster": 1.3},
+    "VVIPVIBES": {"points": 141, "booster": 1.9},
     "mike-bear": {"points": 132, "booster": None},
     "zooz-Zerk": {"points": 128, "booster": None},
     "artoftheblade": {"points": 127, "booster": None},
-    "UnHolYDuO": {"points": 124, "booster": 2.0},
     "phone-zerk": {"points": 123, "booster": None},
     "HRVCHESSSTREAM": {"points": 123, "booster": None},
     "Satranc599": {"points": 122, "booster": None},
-    "Alcedo": {"points": 121, "booster": None},
-    "SchachBasti": {"points": 119, "booster": 1.9},
+    "SchachBasti": {"points": 119, "booster": None},
     "just_chess12": {"points": 105, "booster": None},
     "POPOIPOIPOI": {"points": 100, "booster": None},
     "Konariq7": {"points": 100, "booster": None},
     "Kurse-Aura1": {"points": 95, "booster": None},
+    "ElBasmgy": {"points": 90, "booster": None},
+    "RumijaBarCG21": {"points": 90, "booster": 1.5},
     "fin34601473braunpaul": {"points": 89, "booster": None},
     "LucienTupin": {"points": 89, "booster": None},
     "Mahamaha14": {"points": 87, "booster": None},
@@ -35,7 +38,7 @@ current_ranking = {
     "AhsapAhsap": {"points": 82, "booster": None},
     "Clesio-MorgaM": {"points": 81, "booster": None},
     "EEAguitarn1": {"points": 79, "booster": None},
-    "ElBasmgy": {"points": 77, "booster": None},
+    "hmmmhmmmhmmm": {"points": 78, "booster": 1.8},
     "tunu2011": {"points": 73, "booster": None},
     "FranceWinsWorldCup": {"points": 72, "booster": None},
     "Ahmad_AFG": {"points": 72, "booster": None},
@@ -45,18 +48,18 @@ current_ranking = {
     "Last_Suspect": {"points": 65, "booster": None},
     "IZerkYouLose": {"points": 63, "booster": None},
     "Goku_black419": {"points": 62, "booster": None},
-    "RumijaBarCG21": {"points": 56, "booster": None},
     "test_acc123": {"points": 54, "booster": None},
     "C8c7C8c7C8c7C8c7C8c7": {"points": 51, "booster": None},
     "Cold_Sewy12": {"points": 48, "booster": None},
     "PushAttack14": {"points": 47, "booster": None},
     "Chonma": {"points": 47, "booster": None},
-    "VVIPVIBES": {"points": 45, "booster": None},
-    "Ezrg94": {"points": 44, "booster": 1.5},
+    "Jerronbabylansu": {"points": 47, "booster": 1.7},
+    "Ezrg94": {"points": 44, "booster": None},
     "kingboers": {"points": 43, "booster": None},
-    "gojosaturo1234567": {"points": 43, "booster": 1.4},
+    "gojosaturo1234567": {"points": 43, "booster": None},
     "This-Is-Agamveer": {"points": 41, "booster": None},
     "manglee": {"points": 41, "booster": None},
+    "abhigyan_a_b": {"points": 41, "booster": 1.6},
     "BlackPanda2024": {"points": 38, "booster": None},
     "Retasea_400": {"points": 38, "booster": None},
     "Gyusudhdh_zerk": {"points": 38, "booster": None},
@@ -69,17 +72,17 @@ current_ranking = {
     "asswolve": {"points": 30, "booster": None},
     "KillingHeartattack": {"points": 30, "booster": None},
     "WalterFire": {"points": 28, "booster": None},
-    "Skysparks": {"points": 26, "booster": 1.1},
-    "rohanvv07082010": {"points": 26, "booster": 1.2},
+    "schwarzerrabe": {"points": 28, "booster": None},
+    "Arjun-Saha6": {"points": 28, "booster": None},
+    "Skysparks": {"points": 26, "booster": None},
+    "rohanvv07082010": {"points": 26, "booster": None},
     "VTacademy": {"points": 25, "booster": None},
-    "schwarzerrabe": {"points": 24, "booster": None},
     "koreshok73": {"points": 23, "booster": None},
     "JohnnyChess": {"points": 23, "booster": None},
     "bbk10s": {"points": 22, "booster": None},
     "kubak5": {"points": 22, "booster": None},
     "Che947": {"points": 22, "booster": None},
     "Ficheal": {"points": 21, "booster": None},
-    "Arjun-Saha6": {"points": 20, "booster": None},
     "tharindujayasuriya": {"points": 19, "booster": None},
     "Asherdarin": {"points": 19, "booster": None},
     "c4energy": {"points": 18, "booster": None},
@@ -112,6 +115,7 @@ current_ranking = {
     "UrasAras4444": {"points": 8, "booster": None},
     "Carlotaurus": {"points": 8, "booster": None},
     "Egorchess01": {"points": 8, "booster": None},
+    "SandaruDamsara": {"points": 8, "booster": None},
     "Mayangnabila": {"points": 7, "booster": None},
     "bulletmaniac": {"points": 6, "booster": None},
     "Devraj-123": {"points": 6, "booster": None},
@@ -130,6 +134,7 @@ current_ranking = {
     "S_E_C_R_E_T": {"points": 4, "booster": None},
     "Enserman123": {"points": 4, "booster": None},
     "AVYUKT_GARG": {"points": 4, "booster": None},
+    "Chairopian": {"points": 4, "booster": None},
     "Zerkycharlie": {"points": 3, "booster": None},
     "ZugzwangMode": {"points": 3, "booster": None},
     "sribna": {"points": 3, "booster": None},
@@ -139,6 +144,7 @@ current_ranking = {
     "Gyusudh": {"points": 3, "booster": None},
     "AJESHHRAO12": {"points": 3, "booster": None},
     "Grabytx12": {"points": 3, "booster": None},
+    "ThinkingKnight9": {"points": 3, "booster": None},
     "borak-kopitiam": {"points": 2, "booster": None},
     "blueblue8887": {"points": 2, "booster": None},
     "ciyaerdal4735": {"points": 2, "booster": None},
@@ -156,31 +162,27 @@ current_ranking = {
     "german11": {"points": 2, "booster": None},
     "SENTHILGANESAN": {"points": 2, "booster": None},
     "sirmull": {"points": 2, "booster": None},
-    "Jerronbabylansu": {"points": 2, "booster": None},
+    "KING_OF_KILLER": {"points": 2, "booster": None},
+    "HugeSmoggyFirebird": {"points": 2, "booster": None},
+    "Thabang-Nate": {"points": 2, "booster": None},
     "jash_the_goat": {"points": 1, "booster": None},
 }
 
-new_table_json = """
-{"rank":1,"score":102,"rating":2512,"username":"UnHolYDuO","performance":2367}
-{"rank":2,"score":96,"rating":2334,"username":"VVIPVIBES","performance":2402}
-{"rank":3,"score":78,"rating":2406,"username":"hmmmhmmmhmmm","performance":2301}
-{"rank":4,"score":45,"rating":2054,"username":"Jerronbabylansu","performance":2063}
-{"rank":5,"score":41,"rating":2140,"username":"abhigyan_a_b","flair":"symbols.mending-heart","performance":2100}
-{"rank":6,"score":34,"rating":1993,"username":"RumijaBarCG21","flair":"people.flexed-biceps","performance":2011}
-{"rank":7,"score":33,"rating":2379,"username":"minipekka1","performance":2361}
-{"rank":8,"score":24,"rating":1734,"username":"Alcedo","flair":"symbols.small-blue-diamond","patronColor":1,"performance":1851}
-{"rank":9,"score":16,"rating":1780,"username":"Conrad_Gagnon","performance":1878}
-{"rank":10,"score":14,"rating":2214,"username":"rj08","performance":2281}
-{"rank":11,"score":13,"rating":2080,"username":"ElBasmgy","performance":2027}
-{"rank":12,"score":12,"rating":2199,"username":"tomkruz88","performance":2012}
-{"rank":13,"score":8,"rating":2502,"username":"SandaruDamsara","flair":"smileys.skull","performance":2229}
-{"rank":14,"score":8,"rating":2017,"username":"Arjun-Saha6","flair":"smileys.angry-face-with-horns","performance":2065}
-{"rank":15,"score":4,"rating":2234,"username":"Chairopian","flair":"people.zombie","performance":2526}
-{"rank":16,"score":4,"rating":1427,"username":"schwarzerrabe","performance":1603}
-{"rank":17,"score":3,"rating":2795,"username":"ThinkingKnight9","performance":2206}
-{"rank":18,"score":2,"rating":2133,"username":"KING_OF_KILLER","flair":"smileys.angry-face-with-horns","performance":2172}
-{"rank":19,"score":2,"rating":2137,"username":"HugeSmoggyFirebird","flair":"smileys.smiling-face-with-horns-blob","performance":2110}
-{"rank":20,"score":2,"rating":1641,"username":"Thabang-Nate","performance":1615}
+new_table_json = """{"rank":1,"score":103,"rating":2363,"username":"minipekka1","performance":2252}
+{"rank":2,"score":101,"rating":2707,"username":"Chess_Training_2021","flair":"objects.crown","performance":2543}
+{"rank":3,"score":81,"rating":2493,"username":"UnHolYDuO","performance":2302}
+{"rank":4,"score":56,"rating":2179,"username":"FlorHawryluk","flair":"symbols.no-smoking","performance":2207}
+{"rank":5,"score":50,"rating":2560,"username":"BharatBhushanVerma","flair":"symbols.broken-heart","performance":2477}
+{"rank":6,"score":34,"rating":1843,"username":"Conrad_Gagnon","performance":1936}
+{"rank":7,"score":28,"rating":2075,"username":"NEVER_ZERO","performance":2189}
+{"rank":8,"score":27,"rating":1572,"username":"MarriJanani444","patronColor":1,"performance":1934}
+{"rank":9,"score":16,"rating":1806,"username":"Reinade64","flair":"activity.lichess-ultrabullet","performance":1888}
+{"rank":10,"score":16,"rating":1915,"username":"RumijaBarCG21","flair":"people.flexed-biceps","performance":1812}
+{"rank":11,"score":12,"rating":1643,"username":"aavanisk","performance":1676}
+{"rank":12,"score":10,"rating":2161,"username":"Knieggau","performance":1874}
+{"rank":13,"score":4,"rating":2081,"username":"Abd_el_wahab","flair":"smileys.face-with-tears-of-joy","performance":2021}
+{"rank":14,"score":2,"rating":2191,"username":"ChessTiger5000","performance":2374}
+{"rank":15,"score":2,"rating":2059,"username":"THEBULLETGOD1","performance":2116}
 """
 
 # =========================
