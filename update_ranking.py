@@ -109,12 +109,12 @@ def main():
         sys.exit(0)
 
     # Find tournaments that are finished and not yet processed
+    # Note: Arena tournaments use isFinished:true (not status:"finished")
     new_tournaments = []
     for t in tournaments:
         tid = t.get("id")
-        status = t.get("status", "")
-        # Lichess: status "finished" means done; also check it's not the last one we processed
-        if status == "finished" and tid != last_processed:
+        finished = t.get("isFinished") is True or t.get("status") == "finished"
+        if finished and tid != last_processed:
             new_tournaments.append(t)
 
     if not new_tournaments:
