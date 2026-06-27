@@ -1,0 +1,36 @@
+name: Init Checkpoint (einmalig ausführen)
+
+on:
+  workflow_dispatch:  # nur manuell startbar
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run init checkpoint
+        env:
+          LICHESS_TOKEN: ${{ secrets.LICHESS_TOKEN }}
+        run: python init_checkpoint.py
+
+      - name: Commit updated ranking.json
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ranking.json
+          git diff --cached --quiet || git commit -m "chore: set initial tournament checkpoint [skip ci]"
+          git push
