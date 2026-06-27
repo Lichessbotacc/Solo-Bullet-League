@@ -19,26 +19,28 @@ TOKEN        = os.environ["LICHESS_TOKEN"]
 
 HEADERS_NDJSON = {"Authorization": f"Bearer {TOKEN}", "Accept": "application/x-ndjson"}
 
+
+def is_finished(t: dict) -> bool:
+    # Arena-Turniere nutzen isFinished:true (nicht status:"finished")
+    return t.get("isFinished") is True or t.get("status") == "finished"
+
+
 def get_latest_finished_tournament() -> dict | None:
     url = f"{API_BASE}/team/{TEAM_ID}/arena"
     resp = requests.get(url, headers=HEADERS_NDJSON, timeout=30)
     resp.raise_for_status()
 
-    latest = None
+    # API gibt neueste zuerst zurück — erstes abgeschlossenes nehmen
     for line in resp.text.strip().splitlines():
         line = line.strip()
         if not line:
             continue
         t = json.loads(line)
-        if t.get("status") == "finished":
-            # API returns newest first — so first finished one is the latest
-            if latest is None:
-                latest = t
-            else:
-                # compare by startsAt
-                if t.get("startsAt", 0) > latest.get("startsAt", 0):
-                    latest = t
-    return latest
+        print(f"  Turnier: {t.get('fullName', t.get('id'))} | isFinished={t.get('isFinished')} status={t.get('status')}")
+        if is_finished(t):
+            return t
+    return None
+
 
 def main():
     with open(RANKING_FILE, "r", encoding="utf-8") as f:
@@ -53,7 +55,7 @@ def main():
 
     tid   = latest["id"]
     tname = latest.get("fullName", tid)
-    print(f"✅ Latest finished tournament: {tname} ({tid})")
+    print(f"\n✅ Latest finished tournament: {tname} ({tid})")
     print(f"   Setting this as checkpoint — all future tournaments will be processed.")
 
     data["last_processed_tournament"] = tid
@@ -62,6 +64,7 @@ def main():
         json.dump(data, f, indent=2, ensure_ascii=False)
 
     print(f"💾 Saved to {RANKING_FILE}. You're good to go!")
+
 
 if __name__ == "__main__":
     main()
