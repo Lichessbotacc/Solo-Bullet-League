@@ -1,57 +1,56 @@
 #!/usr/bin/env python3
 """
-EINMALIG AUSFÜHREN – setzt last_processed_tournament auf das aktuell
-neueste abgeschlossene Turnier (status=30).
+EINMALIG AUSFÜHREN – setzt Checkpoint für alle (oder eine) Liga(en).
+
+Usage:
+    LICHESS_TOKEN=xxx python init_checkpoint.py
+    LICHESS_TOKEN=xxx python init_checkpoint.py ultrabullet
 """
 
-import json
-import os
-import requests
+import json, os, sys, requests
 
-TEAM_ID      = "solo-ultrabullet-league"
-RANKING_FILE = "ranking.json"
-API_BASE     = "https://lichess.org/api"
-TOKEN        = os.environ["LICHESS_TOKEN"]
+LEAGUES = {
+    "ultrabullet": "solo-ultrabullet-league",
+    "bullet":      "solo-bullet-league",
+    "blitz":       "solo-blitz-league",
+    "rapid":       "solo-rapid-league",
+}
 
+API_BASE       = "https://lichess.org/api"
+TOKEN          = os.environ["LICHESS_TOKEN"]
 HEADERS_NDJSON = {"Authorization": f"Bearer {TOKEN}", "Accept": "application/x-ndjson"}
 
 
-def main():
-    with open(RANKING_FILE, "r", encoding="utf-8") as f:
+def set_checkpoint(key, team_id):
+    path = f"ranking_{key}.json"
+    print(f"\n--- {key} ({team_id}) ---")
+    with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    print("Fetching finished tournaments (status=30) …")
-    # Filter directly via API: status=30 means finished
-    url = f"{API_BASE}/team/{TEAM_ID}/arena?status=30"
-    resp = requests.get(url, headers=HEADERS_NDJSON, timeout=30)
+    resp = requests.get(f"{API_BASE}/team/{team_id}/arena?status=30",
+                        headers=HEADERS_NDJSON, timeout=30)
     resp.raise_for_status()
-
-    tournaments = []
-    for line in resp.text.strip().splitlines():
-        line = line.strip()
-        if line:
-            t = json.loads(line)
-            tournaments.append(t)
-
-    print(f"Found {len(tournaments)} finished tournaments.")
+    tournaments = [json.loads(l) for l in resp.text.strip().splitlines() if l.strip()]
 
     if not tournaments:
-        print("❌ No finished tournaments found.")
+        print("  ⚠️  No finished tournaments found.")
         return
 
-    # API returns newest first → first one is the latest finished
     latest = tournaments[0]
-    tid   = latest["id"]
-    tname = latest.get("fullName", tid)
-    print(f"✅ Latest finished: {tname} ({tid}) — status={latest.get('status')}")
-
+    tid = latest["id"]
+    print(f"  ✅ Checkpoint → {latest.get('fullName', tid)} ({tid})")
     data["last_processed_tournament"] = tid
 
-    with open(RANKING_FILE, "w", encoding="utf-8") as f:
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+    print(f"  💾 Saved {path}")
 
-    print(f"💾 Saved. From now on only future tournaments will be processed!")
 
+def main():
+    to_run = {sys.argv[1]: LEAGUES[sys.argv[1]]} if len(sys.argv) > 1 else LEAGUES
+    for key, team_id in to_run.items():
+        set_checkpoint(key, team_id)
+    print("\n✅ Done!")
 
 if __name__ == "__main__":
     main()
