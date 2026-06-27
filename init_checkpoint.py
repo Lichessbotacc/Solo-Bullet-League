@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """
-EINMALIG AUSFÜHREN – setzt Checkpoint für alle (oder eine) Liga(en).
+EINMALIG AUSFÜHREN – speichert alle abgeschlossenen Turniere als Checkpoint.
 
-Setzt last_processed_tournament auf das neueste ABGESCHLOSSENE Turnier,
-damit der Bot ab sofort alle ZUKÜNFTIGEN Turniere verarbeitet.
+Die andere Datei (Bot) nimmt dann nur noch zukünftige Turniere.
 
 Usage:
     LICHESS_TOKEN=xxx python init_checkpoint.py
@@ -24,27 +23,26 @@ HEADERS_NDJSON = {"Authorization": f"Bearer {TOKEN}", "Accept": "application/x-n
 
 
 def fetch_all_finished(team_id):
-    """Holt ALLE abgeschlossenen Turniere (paginiert über nb-Parameter)."""
-    tournaments = []
+    """Holt ALLE abgeschlossenen Turniere des Teams."""
     resp = requests.get(
         f"{API_BASE}/team/{team_id}/arena",
-        params={"status": 30, "nb": 100},
+        params={"status": 30, "nb": 200},
         headers=HEADERS_NDJSON,
         timeout=30,
     )
     resp.raise_for_status()
+    tournaments = []
     for line in resp.text.strip().splitlines():
         line = line.strip()
         if line:
             tournaments.append(json.loads(line))
-    return tournaments
+    return tournaments  # neuestes zuerst
 
 
 def set_checkpoint(key, team_id):
     path = f"ranking_{key}.json"
     print(f"\n--- {key} ({team_id}) ---")
 
-    # Ranking-Datei laden
     if not os.path.exists(path):
         print(f"  ⚠️  {path} nicht gefunden – übersprungen.")
         return
@@ -52,21 +50,18 @@ def set_checkpoint(key, team_id):
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # Alle abgeschlossenen Turniere holen
     tournaments = fetch_all_finished(team_id)
     if not tournaments:
         print("  ⚠️  Keine abgeschlossenen Turniere gefunden.")
-        print("  ℹ️  Setze last_processed_tournament auf null – alle zukünftigen Turniere werden verarbeitet.")
-        data["last_processed_tournament"] = None
-    else:
-        # Checkpoint = neuestes abgeschlossenes Turnier
-        # → Bot verarbeitet ab jetzt nur noch NEUE (zukünftige) Turniere
-        latest = tournaments[0]
-        tid = latest["id"]
-        name = latest.get("fullName", tid)
-        print(f"  ✅ Letztes abgeschlossenes Turnier: {name} ({tid})")
-        print(f"  ℹ️  Alle zukünftigen Turniere werden ab jetzt verarbeitet.")
-        data["last_processed_tournament"] = tid
+        return
+
+    # Alle abgeschlossenen Turnier-IDs speichern
+    processed_ids = [t["id"] for t in tournaments]
+    data["processed_tournaments"] = processed_ids
+    data["last_processed_tournament"] = processed_ids[0]  # neuestes
+
+    print(f"  ✅ {len(processed_ids)} Turniere als abgeschlossen markiert.")
+    print(f"  ✅ Checkpoint → {tournaments[0].get('fullName', processed_ids[0])}")
 
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
@@ -87,7 +82,7 @@ def main():
     for key, team_id in to_run.items():
         set_checkpoint(key, team_id)
 
-    print("\n✅ Fertig! Der Bot verarbeitet ab jetzt alle neuen Turniere.")
+    print("\n✅ Fertig! Der Bot verarbeitet ab jetzt nur noch neue Turniere.")
 
 
 if __name__ == "__main__":
