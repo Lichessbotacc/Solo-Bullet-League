@@ -31,7 +31,7 @@ def ranking_file(key):
 
 
 def build_ranking_section(sorted_players):
-    lines = [RANKING_MARKER]
+    lines = []
     for i, (u, d) in enumerate(sorted_players[:TOP_N], 1):
         boost = f" ({d['booster']}x boost next arena)" if d.get("booster") else ""
         lines.append(f"{i}. @{u}: {d['points']}{boost}")
@@ -50,7 +50,7 @@ def process(key, label):
     players = data.get("players", {})
     sorted_players = sorted(players.items(), key=lambda x: x[1]["points"], reverse=True)
 
-    text = f"{label}\n\n" + build_ranking_section(sorted_players)
+    text = build_ranking_section(sorted_players)
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     out_path = os.path.join(OUTPUT_DIR, f"{key}.txt")
