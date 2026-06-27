@@ -1,41 +1,27 @@
-name: Update Ranking
+name: Update All Rankings
 
 on:
   schedule:
-    # Runs every day at 03:00 UTC
     - cron: "0 3 * * *"
   workflow_dispatch:
-    # Also allows manual trigger via GitHub UI
 
 jobs:
   update:
     runs-on: ubuntu-latest
-
     permissions:
-      contents: write   # needed to commit ranking.json back to the repo
-
+      contents: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Install dependencies
-        run: pip install requests
-
-      - name: Run ranking updater
+      - run: pip install requests
+      - run: python update_ranking.py
         env:
           LICHESS_TOKEN: ${{ secrets.LICHESS_TOKEN }}
-        run: python update_ranking.py
-
-      - name: Commit updated ranking.json
-        run: |
+      - run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ranking.json
-          # Only commit if something actually changed
-          git diff --cached --quiet || git commit -m "chore: update ranking after arena [skip ci]"
+          git add ranking_*.json
+          git diff --cached --quiet || git commit -m "chore: update rankings [skip ci]"
           git push
