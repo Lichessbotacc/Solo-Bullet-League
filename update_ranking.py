@@ -24,7 +24,10 @@ LEAGUES = {
 API_BASE       = "https://lichess.org/api"
 TOKEN          = os.environ["LICHESS_TOKEN"]
 HEADERS_NDJSON = {"Authorization": f"Bearer {TOKEN}", "Accept": "application/x-ndjson"}
+HEADERS        = {"Authorization": f"Bearer {TOKEN}"}
 BOOSTER_LEVELS = [2.0, 1.9, 1.8, 1.7, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1]
+
+RANKING_MARKER = "## Ranking:"
 
 
 def ranking_file(key):
@@ -57,22 +60,43 @@ def get_results(tournament_id):
     resp.raise_for_status()
     return [json.loads(l) for l in resp.iter_lines() if l]
 
-def update_description(team_id, label, sorted_players):
-    medals = {1: "🥇", 2: "🥈", 3: "🥉"}
-    lines = [f"# 🏆 {label} – Overall Ranking", "",
-             "Top 100 players by accumulated arena points.",
-             "Boosters awarded to top 10 of each arena.", ""]
+def get_current_description(team_id):
+    """Holt die aktuelle Teambeschreibung von Lichess."""
+    resp = requests.get(f"{API_BASE}/team/{team_id}", headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+    return resp.json().get("description", "")
+
+def build_ranking_section(sorted_players):
+    """Erstellt nur den Ranking-Abschnitt (ab ## Ranking:)."""
+    lines = [RANKING_MARKER]
     for i, (u, d) in enumerate(sorted_players[:100], 1):
-        boost = f"  ⚡ {d['booster']}x" if d["booster"] else ""
-        lines.append(f"{medals.get(i, f'{i}.')} @{u} — {d['points']} pts{boost}")
-    lines += ["", "*Updated automatically after each arena.*"]
+        boost = f" ({d['booster']}x boost next arena)" if d["booster"] else ""
+        lines.append(f"{i}. @{u}: {d['points']}{boost}")
+    return "\n".join(lines)
+
+def update_description(team_id, sorted_players):
+    """Ersetzt nur den Ranking-Abschnitt, lässt den Rest der Beschreibung unberührt."""
+    current = get_current_description(team_id)
+
+    if RANKING_MARKER in current:
+        # Alles vor ## Ranking: behalten, nur Ranking-Teil ersetzen
+        before = current[:current.index(RANKING_MARKER)]
+    else:
+        # Kein Ranking-Abschnitt vorhanden → ans Ende anhängen
+        before = current.rstrip() + "\n\n"
+
+    new_description = before + build_ranking_section(sorted_players)
+
     resp = requests.post(
         f"{API_BASE}/team/{team_id}/description",
-        headers={"Authorization": f"Bearer {TOKEN}"},
-        data={"text": "\n".join(lines)}, timeout=30,
+        headers=HEADERS,
+        data={"text": new_description},
+        timeout=30,
     )
-    print("  ✅ Description updated." if resp.status_code == 200
-          else f"  ⚠️  Description failed: {resp.status_code}")
+    if resp.status_code == 200:
+        print("  ✅ Ranking-Abschnitt aktualisiert.")
+    else:
+        print(f"  ⚠️  Description update fehlgeschlagen: {resp.status_code} – {resp.text}")
 
 def process(key, config):
     print(f"\n{'='*50}\n🏟️  {config['label']}\n{'='*50}")
@@ -101,7 +125,7 @@ def process(key, config):
             b = players[u]["booster"]
             if b:
                 score = int(score * b)
-                print(f"    {u}: × {b} = {score} pts")
+                print(f"    {u}: ×{b} = {score} pts")
             else:
                 print(f"    {u}: +{score} pts")
             players[u]["points"] += score
@@ -122,7 +146,7 @@ def process(key, config):
     save(key, data)
     print(f"\n  💾 Saved ranking_{key}.json")
     print("  📊 Top 5: " + ", ".join(f"{u}({d['points']})" for u, d in sorted_players[:5]))
-    update_description(config["team_id"], config["label"], sorted_players)
+    update_description(config["team_id"], sorted_players)
     return True
 
 
